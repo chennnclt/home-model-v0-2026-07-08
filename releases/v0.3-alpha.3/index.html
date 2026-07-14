@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171410">
+  <link rel="icon" href="data:,">
+  <title>HOME · Incremental Gaussian</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #171410;
+      --panel: #211d18;
+      --panel-2: #2a241d;
+      --ink: #f3ede3;
+      --muted: #b9aa98;
+      --gold: #dbb675;
+      --cyan: #79cbd0;
+      --line: rgba(255,255,255,.11);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif; }
+    body { padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+    main { width: min(100%, 980px); margin: 0 auto; }
+    header { padding: 18px 18px 12px; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    h1 { margin: 0; font-family: ui-serif, "Noto Serif TC", serif; font-size: clamp(22px, 6vw, 34px); font-weight: 560; letter-spacing: .02em; }
+    .version { margin-top: 5px; color: var(--muted); font-size: 12px; letter-spacing: .11em; text-transform: uppercase; }
+    .truth { max-width: 190px; padding: 8px 10px; border: 1px solid rgba(121,203,208,.42); border-radius: 12px; color: var(--cyan); font-size: 11px; line-height: 1.35; text-align: right; }
+    .viewer-shell { position: relative; width: 100%; height: min(63svh, 630px); min-height: 370px; overflow: hidden; background: #0b0a08; border-block: 1px solid var(--line); }
+    #viewer { position: absolute; inset: 0; }
+    #viewer iframe { width: 100%; height: 100%; border: 0; display: block; background: #0b0a08; }
+    .viewer-message { position: absolute; inset: 0; display: grid; place-items: center; padding: 30px; text-align: center; color: var(--muted); background: radial-gradient(circle at 50% 42%, #29231b, #0b0a08 72%); }
+    .viewer-message[hidden] { display: none; }
+    .viewer-tools { position: absolute; top: 12px; right: 12px; display: flex; gap: 8px; z-index: 2; }
+    button { min-height: 44px; border: 1px solid var(--line); border-radius: 999px; background: rgba(22,19,15,.86); color: var(--ink); font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+    .tool { min-width: 44px; padding: 0 13px; backdrop-filter: blur(10px); }
+    .mode-card { margin: -1px 14px 0; position: relative; z-index: 3; padding: 14px 15px; border: 1px solid var(--line); border-radius: 0 0 16px 16px; background: rgba(33,29,24,.96); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
+    .mode-title { font-size: 16px; font-weight: 650; }
+    .mode-meta { margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .mode-meta strong { color: var(--gold); font-weight: 600; }
+    nav { padding: 17px 14px 5px; }
+    .nav-label { padding: 0 4px 9px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+    .rooms { display: flex; gap: 8px; overflow-x: auto; padding: 0 4px 8px; scrollbar-width: none; scroll-snap-type: x proximity; }
+    .rooms::-webkit-scrollbar { display: none; }
+    .room { flex: 0 0 auto; padding: 0 15px; scroll-snap-align: start; }
+    .room.active { border-color: rgba(219,182,117,.74); background: #3a2f21; color: #fff5e4; }
+    .room.photo { border-color: rgba(121,203,208,.48); }
+    .legend { margin: 13px 18px 24px; padding: 14px 15px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .legend b { color: var(--ink); }
+    .dots { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 7px; }
+    .dot::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--gold); }
+    .dot.photo::before { background: var(--cyan); }
+    @media (min-width: 760px) {
+      .viewer-shell { border: 1px solid var(--line); border-radius: 18px 18px 0 0; }
+      header { padding-inline: 4px; }
+      .mode-card { margin-inline: 0; }
+      nav { padding-inline: 0; }
+      .legend { margin-inline: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>HOME</h1>
+        <div class="version" id="version">Incremental Gaussian</div>
+      </div>
+      <div class="truth">全屋可看；精度與來源層級分開標示，之後可逐房替換。</div>
+    </header>
+
+    <section class="viewer-shell" id="viewer-shell" aria-label="Gaussian 3D viewer">
+      <div id="viewer"></div>
+      <div class="viewer-message" id="viewer-message">正在載入全屋 Gaussian…</div>
+      <div class="viewer-tools">
+        <button class="tool" id="reset" type="button" aria-label="回到全屋">全屋</button>
+        <button class="tool" id="fullscreen" type="button" aria-label="全螢幕">⛶</button>
+      </div>
+    </section>
+
+    <section class="mode-card" aria-live="polite">
+      <div class="mode-title" id="mode-title">全屋 Gaussian proxy</div>
+      <div class="mode-meta" id="mode-meta">由 v0.2.6 幾何骨架生成；11 房與 9 個連接區都在共同座標。</div>
+    </section>
+
+    <nav aria-label="房間切換">
+      <div class="nav-label">選擇房間 · 每次只載入一個資產</div>
+      <div class="rooms" id="rooms"></div>
+    </nav>
+
+    <aside class="legend">
+      <div class="dots"><span class="dot"><b>骨架 Gaussian</b></span><span class="dot photo"><b>照片訓練 Gaussian</b></span></div>
+      黃色層是可替換的空間 proxy；青色層是既有照片或影片實際訓練結果。尚未量尺對齊的資產只在房間內獨立觀看，不會假裝已無縫拼入全屋。
+    </aside>
+  </main>
+
+  <script>
+    const viewerHost = document.querySelector('#viewer');
+    const message = document.querySelector('#viewer-message');
+    const title = document.querySelector('#mode-title');
+    const meta = document.querySelector('#mode-meta');
+    const roomList = document.querySelector('#rooms');
+    const viewerShell = document.querySelector('#viewer-shell');
+    let scene;
+    let activeKey = 'HOME';
+
+    const absolute = value => new URL(value, window.location.href).href;
+
+    function viewerUrl(asset) {
+      const url = new URL(scene.viewer_runtime.entry_uri, window.location.href);
+      const params = new URLSearchParams({
+        content: absolute(asset.uri),
+        settings: absolute(asset.settings_uri || scene.viewer_runtime.settings_uri),
+        budget: '0.3'
+      });
+      params.set('noui', '');
+      params.set('nofx', '');
+      url.search = params.toString();
+      return url.href;
+    }
+
+    function mount(asset, label, description, key) {
+      activeKey = key;
+      viewerHost.replaceChildren();
+      message.hidden = false;
+      message.textContent = `正在載入 ${label}…`;
+      const iframe = document.createElement('iframe');
+      iframe.title = label;
+      iframe.allow = 'fullscreen; xr-spatial-tracking';
+      iframe.src = viewerUrl(asset);
+      iframe.addEventListener('load', () => { message.hidden = true; }, { once: true });
+      viewerHost.append(iframe);
+      title.textContent = label;
+      meta.innerHTML = description;
+      for (const button of roomList.querySelectorAll('button')) {
+        button.classList.toggle('active', button.dataset.key === key);
+      }
+    }
+
+    function showHome() {
+      mount(
+        scene.whole_home,
+        '全屋 Gaussian proxy',
+        `共同座標 · <strong>${scene.whole_home.splats.toLocaleString()} splats</strong> · ${(scene.whole_home.bytes / 1048576).toFixed(1)} MB。這是規劃級骨架，不是照片精度。`,
+        'HOME'
+      );
+    }
+
+    function showRoom(room) {
+      const photo = room.detail.representation === 'image_trained_gaussian';
+      const description = photo
+        ? `照片訓練 · <strong>${room.detail.quality_status}</strong> · ${room.detail.splats.toLocaleString()} splats。尚未量尺對齊，只在房間內觀看。`
+        : `由 v0.2.6 房間骨架生成 · <strong>PROXY</strong> · ${room.detail.splats.toLocaleString()} splats。可在補拍後只替換此房。`;
+      mount(room.detail, `${room.id} · ${room.name}`, description, room.id);
+    }
+
+    async function start() {
+      try {
+        const response = await fetch('./scene-registry.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`registry HTTP ${response.status}`);
+        scene = await response.json();
+        document.querySelector('#version').textContent = `${scene.release_id} · Incremental Gaussian`;
+        const all = document.createElement('button');
+        all.type = 'button';
+        all.className = 'room active';
+        all.dataset.key = 'HOME';
+        all.textContent = '全屋';
+        all.addEventListener('click', showHome);
+        roomList.append(all);
+        for (const room of scene.rooms) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = `room ${room.detail.representation === 'image_trained_gaussian' ? 'photo' : ''}`;
+          button.dataset.key = room.id;
+          button.textContent = `${room.id} ${room.short_name}`;
+          button.addEventListener('click', () => showRoom(room));
+          roomList.append(button);
+        }
+        showHome();
+      } catch (error) {
+        message.hidden = false;
+        message.textContent = `載入失敗：${error.message}`;
+      }
+    }
+
+    document.querySelector('#reset').addEventListener('click', () => scene && showHome());
+    document.querySelector('#fullscreen').addEventListener('click', () => viewerShell.requestFullscreen?.());
+    start();
+  </script>
+</body>
+</html>

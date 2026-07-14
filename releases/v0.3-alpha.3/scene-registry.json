@@ -1,0 +1,206 @@
+{
+  "connector_count": 9,
+  "release_id": "v0.3-alpha.3",
+  "rooms": [
+    {
+      "detail": {
+        "asset_id": "asset-R01-scaffold-5332b401762a",
+        "bytes": 123539,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "5332b401762a3ce82b0dabac0e7c2299db2a23b977e73e1eabce71d6ed14889c",
+        "splats": 2198,
+        "uri": "../../assets/proxies/rooms/R01/asset-R01-scaffold-5332b401762a/proxy.ply"
+      },
+      "id": "R01",
+      "name": "玄關",
+      "short_name": "玄關"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R02-scaffold-0920af617771",
+        "bytes": 100075,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "0920af617771df2f6366a332a088941024121213cee2955576836a0f1675645c",
+        "splats": 1779,
+        "uri": "../../assets/proxies/rooms/R02/asset-R02-scaffold-0920af617771/proxy.ply"
+      },
+      "id": "R02",
+      "name": "餐廳 / public circulation",
+      "short_name": "餐廳"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R03-scaffold-c44b96315d2a",
+        "bytes": 97443,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "c44b96315d2ac42825abfc4c4a8979204c0f389e5c1b17a0723f18dc1848a507",
+        "splats": 1732,
+        "uri": "../../assets/proxies/rooms/R03/asset-R03-scaffold-c44b96315d2a/proxy.ply"
+      },
+      "id": "R03",
+      "name": "客廳",
+      "short_name": "客廳"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R04-photo-86dff22e7d0a",
+        "bytes": 9441550,
+        "coordinate_scope": "room_local_only",
+        "quality_status": "HOLD",
+        "representation": "image_trained_gaussian",
+        "settings_uri": "../../assets/rooms/R04/asset-R04-photo-86dff22e7d0a/settings.json",
+        "sha256": "86dff22e7d0a6715ac45c6769aeedfb425efcae223d392ed30e9ba5af1c7861b",
+        "splats": 40000,
+        "uri": "../../assets/rooms/R04/asset-R04-photo-86dff22e7d0a/mobile.ply"
+      },
+      "id": "R04",
+      "name": "客衛",
+      "short_name": "客衛"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R05-photo-0a0c76881d01",
+        "bytes": 701289,
+        "coordinate_scope": "room_local_only",
+        "quality_status": "HOLD",
+        "representation": "image_trained_gaussian",
+        "settings_uri": "../../assets/rooms/R05/asset-R05-photo-0a0c76881d01/settings.json",
+        "sha256": "0a0c76881d012f0ed19175a36588e41ada04365bfe75d851cfabd09c129d4d95",
+        "splats": 2965,
+        "uri": "../../assets/rooms/R05/asset-R05-photo-0a0c76881d01/mobile.ply"
+      },
+      "id": "R05",
+      "name": "廚房",
+      "short_name": "廚房"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R06-photo-ca8008ff04de",
+        "bytes": 1185561,
+        "coordinate_scope": "room_local_only",
+        "quality_status": "HOLD",
+        "representation": "image_trained_gaussian",
+        "settings_uri": "../../assets/rooms/R06/asset-R06-photo-ca8008ff04de/settings.json",
+        "sha256": "ca8008ff04de62b5ab6f70358332150cd20119796f697db96dd56782712d37b2",
+        "splats": 5017,
+        "uri": "../../assets/rooms/R06/asset-R06-photo-ca8008ff04de/mobile.ply"
+      },
+      "id": "R06",
+      "name": "工作陽台",
+      "short_name": "工作陽台"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R07-scaffold-8050f41e097c",
+        "bytes": 72635,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "8050f41e097c85da51b4634a7c76dbd32b384e0dd2d01bf420e6099ef5718d2e",
+        "splats": 1289,
+        "uri": "../../assets/proxies/rooms/R07/asset-R07-scaffold-8050f41e097c/proxy.ply"
+      },
+      "id": "R07",
+      "name": "儲藏室",
+      "short_name": "儲藏室"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R08-scaffold-1082b8d2b1ab",
+        "bytes": 86019,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "1082b8d2b1ab91b71bc165085ff40ba76e0c3947a869add9de3a953a95a7ff89",
+        "splats": 1528,
+        "uri": "../../assets/proxies/rooms/R08/asset-R08-scaffold-1082b8d2b1ab/proxy.ply"
+      },
+      "id": "R08",
+      "name": "工作間",
+      "short_name": "工作間"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R09-scaffold-818c873cb132",
+        "bytes": 155123,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "818c873cb132d116545387230f5b37822ca07960cf7834c32be32a56b751ec94",
+        "splats": 2762,
+        "uri": "../../assets/proxies/rooms/R09/asset-R09-scaffold-818c873cb132/proxy.ply"
+      },
+      "id": "R09",
+      "name": "主臥",
+      "short_name": "主臥"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R10-photo-161a8afc11bb",
+        "bytes": 2177469,
+        "coordinate_scope": "room_local_only",
+        "quality_status": "HOLD",
+        "representation": "image_trained_gaussian",
+        "settings_uri": "../../assets/rooms/R10/asset-R10-photo-161a8afc11bb/settings.json",
+        "sha256": "161a8afc11bbfdb7bc9acfc6037c14fd074a48cf074f31f727353e167f728e6d",
+        "splats": 9220,
+        "uri": "../../assets/rooms/R10/asset-R10-photo-161a8afc11bb/mobile.ply"
+      },
+      "id": "R10",
+      "name": "主衛",
+      "short_name": "主衛"
+    },
+    {
+      "detail": {
+        "asset_id": "asset-R11-scaffold-c8474b4ead76",
+        "bytes": 9298,
+        "coordinate_scope": "world",
+        "quality_status": "PROXY",
+        "representation": "scaffold_gaussian_proxy",
+        "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+        "sha256": "c8474b4ead76d0e4d001a661c2e97ca80d73af44a726b4f696c53047d4b0cfe0",
+        "splats": 158,
+        "uri": "../../assets/proxies/rooms/R11/asset-R11-scaffold-c8474b4ead76/proxy.ply"
+      },
+      "id": "R11",
+      "name": "私領域走廊",
+      "short_name": "私領域走廊"
+    }
+  ],
+  "scaffold_version": "v0.2.6",
+  "schema_version": "home.public-scene/0.3",
+  "truth_statement": "All 11 rooms and 9 interior connectors have scaffold-derived Gaussian proxies in the shared v0.2.6 frame. R04, R05, R06, R10 additionally expose unaligned, image-trained HOLD assets in isolated room detail views.",
+  "upgrade_contract": {
+    "placement_without_retraining": true,
+    "rollback_by_immutable_release": true,
+    "room_local_replacement": true
+  },
+  "viewer_runtime": {
+    "entry_uri": "../../viewer/supersplat-viewer-1.27.1/index.html",
+    "license": "MIT",
+    "name": "@playcanvas/supersplat-viewer",
+    "settings_uri": "../../viewer/supersplat-viewer-1.27.1/settings.json",
+    "version": "1.27.1"
+  },
+  "whole_home": {
+    "asset_id": "asset-HOME-release-c457c4aa108d",
+    "bytes": 959395,
+    "quality_status": "PROXY",
+    "representation": "release_gaussian_composite",
+    "sha256": "c457c4aa108d068dec412a81092d0f8008eed1f8c883187417afc1a00077cae2",
+    "splats": 17124,
+    "uri": "../../assets/releases/v0.3-alpha.3/asset-HOME-release-c457c4aa108d/whole-home.ply"
+  }
+}

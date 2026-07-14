@@ -1,0 +1,142 @@
+{
+  "files": [
+    {
+      "bytes": 1,
+      "path": ".nojekyll",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "bytes": 123539,
+      "path": "assets/proxies/rooms/R01/asset-R01-scaffold-5332b401762a/proxy.ply",
+      "sha256": "5332b401762a3ce82b0dabac0e7c2299db2a23b977e73e1eabce71d6ed14889c"
+    },
+    {
+      "bytes": 100075,
+      "path": "assets/proxies/rooms/R02/asset-R02-scaffold-0920af617771/proxy.ply",
+      "sha256": "0920af617771df2f6366a332a088941024121213cee2955576836a0f1675645c"
+    },
+    {
+      "bytes": 97443,
+      "path": "assets/proxies/rooms/R03/asset-R03-scaffold-c44b96315d2a/proxy.ply",
+      "sha256": "c44b96315d2ac42825abfc4c4a8979204c0f389e5c1b17a0723f18dc1848a507"
+    },
+    {
+      "bytes": 72635,
+      "path": "assets/proxies/rooms/R07/asset-R07-scaffold-8050f41e097c/proxy.ply",
+      "sha256": "8050f41e097c85da51b4634a7c76dbd32b384e0dd2d01bf420e6099ef5718d2e"
+    },
+    {
+      "bytes": 86019,
+      "path": "assets/proxies/rooms/R08/asset-R08-scaffold-1082b8d2b1ab/proxy.ply",
+      "sha256": "1082b8d2b1ab91b71bc165085ff40ba76e0c3947a869add9de3a953a95a7ff89"
+    },
+    {
+      "bytes": 155123,
+      "path": "assets/proxies/rooms/R09/asset-R09-scaffold-818c873cb132/proxy.ply",
+      "sha256": "818c873cb132d116545387230f5b37822ca07960cf7834c32be32a56b751ec94"
+    },
+    {
+      "bytes": 9298,
+      "path": "assets/proxies/rooms/R11/asset-R11-scaffold-c8474b4ead76/proxy.ply",
+      "sha256": "c8474b4ead76d0e4d001a661c2e97ca80d73af44a726b4f696c53047d4b0cfe0"
+    },
+    {
+      "bytes": 959395,
+      "path": "assets/releases/v0.3-alpha.3/asset-HOME-release-c457c4aa108d/whole-home.ply",
+      "sha256": "c457c4aa108d068dec412a81092d0f8008eed1f8c883187417afc1a00077cae2"
+    },
+    {
+      "bytes": 9441550,
+      "path": "assets/rooms/R04/asset-R04-photo-86dff22e7d0a/mobile.ply",
+      "sha256": "86dff22e7d0a6715ac45c6769aeedfb425efcae223d392ed30e9ba5af1c7861b"
+    },
+    {
+      "bytes": 1112,
+      "path": "assets/rooms/R04/asset-R04-photo-86dff22e7d0a/settings.json",
+      "sha256": "fb488939b5e87c0a53d4bd7b716641d704f72441b40cf8cbd39c015ddc707903"
+    },
+    {
+      "bytes": 701289,
+      "path": "assets/rooms/R05/asset-R05-photo-0a0c76881d01/mobile.ply",
+      "sha256": "0a0c76881d012f0ed19175a36588e41ada04365bfe75d851cfabd09c129d4d95"
+    },
+    {
+      "bytes": 1112,
+      "path": "assets/rooms/R05/asset-R05-photo-0a0c76881d01/settings.json",
+      "sha256": "e41a0e2519687ef6ce75b7afa0e6330e7a05947b32021bce88640dd6793345a5"
+    },
+    {
+      "bytes": 1185561,
+      "path": "assets/rooms/R06/asset-R06-photo-ca8008ff04de/mobile.ply",
+      "sha256": "ca8008ff04de62b5ab6f70358332150cd20119796f697db96dd56782712d37b2"
+    },
+    {
+      "bytes": 1112,
+      "path": "assets/rooms/R06/asset-R06-photo-ca8008ff04de/settings.json",
+      "sha256": "6db3488552ccf93349a286feae5fa66d2b9494d1fd58976fcf8f2ba443841c2f"
+    },
+    {
+      "bytes": 2177469,
+      "path": "assets/rooms/R10/asset-R10-photo-161a8afc11bb/mobile.ply",
+      "sha256": "161a8afc11bbfdb7bc9acfc6037c14fd074a48cf074f31f727353e167f728e6d"
+    },
+    {
+      "bytes": 1112,
+      "path": "assets/rooms/R10/asset-R10-photo-161a8afc11bb/settings.json",
+      "sha256": "cefd483b35e441451922828237a051268b4730b5e5763c4902198570233b8889"
+    },
+    {
+      "bytes": 348,
+      "path": "index.html",
+      "sha256": "78ff699bb5a351aa331188e4db686edb122546ecaac03d242e43758cd2df83e9"
+    },
+    {
+      "bytes": 9822,
+      "path": "releases/v0.3-alpha.3/index.html",
+      "sha256": "f0b271b505acbe0a2bb3c1e525f46146f186b12935528fe0abb7221818801caf"
+    },
+    {
+      "bytes": 7830,
+      "path": "releases/v0.3-alpha.3/scene-registry.json",
+      "sha256": "aa8dcb10276bb2fa10867981364c44c64df8702bda41efa97334bda6558de9c7"
+    },
+    {
+      "bytes": 1077,
+      "path": "viewer/supersplat-viewer-1.27.1/LICENSE.playcanvas.txt",
+      "sha256": "44716a2a1040df078772702d677d46f7d97f40c2375bf8221d4b3b741143f823"
+    },
+    {
+      "bytes": 17350,
+      "path": "viewer/supersplat-viewer-1.27.1/index.css",
+      "sha256": "74d2b955fe23e9c7293d6eb987492513bf81331ccbf31e334a4a171cbc6d68f7"
+    },
+    {
+      "bytes": 49250,
+      "path": "viewer/supersplat-viewer-1.27.1/index.html",
+      "sha256": "ed5e082359967178995b28024d576d5e348d591b64700a6fdb5f3ebc96c313c2"
+    },
+    {
+      "bytes": 2911333,
+      "path": "viewer/supersplat-viewer-1.27.1/index.js",
+      "sha256": "af3764f26a9d548fa3ddd9124655791db2ed258ed2806e94cf4a89a7f10cb792"
+    },
+    {
+      "bytes": 757,
+      "path": "viewer/supersplat-viewer-1.27.1/settings.json",
+      "sha256": "4bbe6a9055299e91f457bf34c62ecf07b3d95a99ed1ccb84f51571a0a7a0de45"
+    }
+  ],
+  "first_load_assets": [
+    "releases/v0.3-alpha.3/index.html",
+    "releases/v0.3-alpha.3/scene-registry.json",
+    "viewer/supersplat-viewer-1.27.1/index.html",
+    "viewer/supersplat-viewer-1.27.1/index.css",
+    "viewer/supersplat-viewer-1.27.1/index.js",
+    "assets/releases/v0.3-alpha.3/asset-HOME-release-c457c4aa108d/whole-home.ply"
+  ],
+  "registry_sha256": "98db92ae5650baa7ccfe948ae1811f4598b221f61eabc9ed961a35677dae556d",
+  "release_asset_receipt_sha256": "e1763812dbca6476ddd09ab1442644edcc23a70b04dbf80c2e3d93550bf2ea7e",
+  "release_id": "v0.3-alpha.3",
+  "schema_version": "home.public-package/1",
+  "total_bytes_before_manifest": 18111612
+}
